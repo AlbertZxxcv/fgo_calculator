@@ -1,6 +1,10 @@
 export default [
   { heading: 'Forms' },
   {
+    title: '宝具伤害计算',
+    to: 'np-calculator'
+  },
+  {
     title: 'Form Elements',
     icon: { icon: 'tabler-copy' },
     children: [
