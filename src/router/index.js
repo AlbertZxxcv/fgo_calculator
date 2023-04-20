@@ -19,7 +19,7 @@ const router = createRouter({
         // if (userRole === 'client')
         //   return { name: 'access-control' }
         
-        return { name: 'dashboards-analytics', query: to.query }
+        return { name: 'np-calculator', query: to.query }
       },
     },
     {
