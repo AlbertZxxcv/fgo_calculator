@@ -12,14 +12,15 @@ const router = createRouter({
     {
       path: '/',
       redirect: to => {
-        const userData = JSON.parse(localStorage.getItem('userData') || '{}')
-        const userRole = userData && userData.role ? userData.role : null
-        if (userRole === 'admin')
-          return { name: 'dashboards-analytics' }
-        if (userRole === 'client')
-          return { name: 'access-control' }
+        // const userData = JSON.parse(localStorage.getItem('userData') || '{}')
+        // const userRole = userData && userData.role ? userData.role : null
+        // if (userRole === 'admin')
+        //   return { name: 'dashboards-analytics' }
+        // if (userRole === 'client')
+        //   return { name: 'access-control' }
         
-        return { name: 'login', query: to.query }
+        // return { name: 'login', query: to.query }
+        return { name: 'np-calculator' }
       },
     },
     {
