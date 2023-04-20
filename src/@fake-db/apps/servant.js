@@ -10,84 +10,273 @@ const database = [
     {
         id: 312,
         name: 'Lancelot',
-        skills:{
-            skill1: {
+        atk: 13969,
+        multiplier: 400,
+        skills:[
+            {
+                name: 'skill1',
+                multiplier: 400,
+                atk: 13696,
                 a: 0,
                 b: 40,
-                c: 0,
+                c_np: 0,
+                c_skill: 0,
                 d: 0,
                 cd: 6,
-                durtaion: 3,
+                duration: 3,
+                current: 0
             },
-            skill2: {
+            {
+                name: 'skill2',
                 a: 0,
-                b: 40,
-                c: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
                 d: 0,
                 cd: 6,
-                durtaion: 3,
+                duration: 3,
+                current: 0
             },
-            skill3: {
+            {
+                name: 'skill3',
                 a: 0,
-                b: 40,
-                c: 0,
+                b: 0,
+                c_np: 30,
+                c_skill: 0,
                 d: 0,
                 cd: 6,
-                durtaion: 3,
+                duration: 3,
+                current: 5
             },
-        },
+            {
+                name: 'np',
+                a: 20,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 3,
+                current: 0
+            },
+        ],
+        class_advantage: 1,
         image: lancelot
     },
     {
         id: 376,
         name: 'Tiamat',
-        skill1: {
-            a: 0,
-            b: 40,
-            c: 0,
-            d: 0,
-            cd: 6,
-            durtaion: 3,
-        },
+        multiplier: 400,
+        atk: 12527,
+        skills:[
+            {
+                name: 'skill1',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill2',
+                a: 30,
+                b: 30,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill3',
+                a: 0,
+                b: 0,
+                c_np: 20,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 1,
+                current: 0
+            },
+            {
+                name: 'np',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 3,
+                current: 0
+            },
+        ],
+        class_advantage: 1,
         image: tiamat
     },
     {
         id: 373,
         name: 'Kukulcan',
-        skill1: {
-            a: 0,
-            b: 40,
-            c: 0,
-            d: 0,
-            cd: 6,
-            durtaion: 3,
-        },
+        multiplier: 400,
+        atk: 13775,
+        skills:[
+            {
+                name: 'skill1',
+                a: 0,
+                b: 50,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 5,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill2',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill3',
+                a: 30,
+                b: 0,
+                c_np: 30,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'np',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 3,
+                current: 0
+            },
+        ],
+        class_advantage: 1,
         image: kukulcan
     },
     {
         id: 247,
         name: 'Arjuna(Alter)',
-        skill1: {
-            a: 0,
-            b: 40,
-            c: 0,
-            d: 0,
-            cd: 6,
-            durtaion: 3,
-        },
+        multiplier: 400,
+        atk: 14050,
+        skills:[
+            {
+                name: 'skill1',
+                a: 0,
+                b: 30,
+                c_np: 0,
+                c_skill: 50,
+                d: 0,
+                cd: 5,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill2',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill3',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'np',
+                a: 32,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 1,
+                current: 0
+            },
+        ],
+        class_advantage: 1.5,
         image: arjuna
     },
     {
         id: 12,
         name: 'Gilgamesh',
-        skill1: {
-            a: 0,
-            b: 40,
-            c: 0,
-            d: 0,
-            cd: 6,
-            durtaion: 3,
-        },
+        multiplier: 500,
+        atk: 12770,
+        skills:[
+            {
+                name: 'skill1',
+                a: 0,
+                b: 21,
+                c_np: 20,
+                c_skill: 0,
+                d: 0,
+                cd: 5,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'skill2',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 50,
+                cd: 6,
+                duration: 3,
+                current: 6
+            },
+            {
+                name: 'skill3',
+                a: 0,
+                b: 0,
+                c_np: 0,
+                c_skill: 0,
+                d: 0,
+                cd: 6,
+                duration: 3,
+                current: 0
+            },
+            {
+                name: 'np',
+                a: 0,
+                b: 0,
+                c_np: 30,
+                c_skill: 0,
+                d: 0,
+                cd: 1,
+                duration: 1,
+                current: 0
+            },
+        ],
+        class_advantage: 1,
         image: gilgamesh
     },
 ]
