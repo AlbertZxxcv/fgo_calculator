@@ -12,6 +12,8 @@ import './apps/chat'
 import './apps/email'
 import './apps/invoice'
 
+import './apps/servant'
+
 // Dashboard
 import './dashboard/analytics'
 

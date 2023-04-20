@@ -1,43 +1,81 @@
 <script setup>
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
-import avatar3 from '@images/avatars/avatar-3.png'
-import avatar4 from '@images/avatars/avatar-4.png'
-import avatar5 from '@images/avatars/avatar-5.png'
+import NpDamageCard from '@/pages/np/NpDamageCard.vue';
 
-const items = [
-  {
-    name: 'Sandra Adams',
-    avatar: avatar1,
-  },
-  {
-    name: 'Ali Connors',
-    avatar: avatar2,
-  },
-  {
-    name: 'Trevor Hansen',
-    avatar: avatar3,
-  },
-  {
-    name: 'Tucker Smith',
-    avatar: avatar4,
-  },
-  {
-    name: 'Britta Holt',
-    avatar: avatar5,
-  },
+const Supporter = [
+    {
+        id: 1,
+        name: '第一回合双杀狐,第三回合换奥伯龙',
+        buffs: {
+            battle1:{
+                A: 100,
+                B: 0,
+                C_np: 0,
+                C_skill: 0,
+                D: 0,
+            },
+            battle2:{
+                A: 0,
+                B: 0,
+                C_np: 0,
+                C_skill: 0,
+                D: 0,
+            },
+            battle3:{
+                A: 50,
+                B: 0,
+                C_np: 30,
+                C_skill: 0,
+                D: 0,
+            },
+        },
+    },
+    {
+        id: 2,
+        name: '第一回合单杀狐奥伯龙,第二回合换另一个杀狐',
+        buffs: {
+            battle1:{
+                A: 50,
+                B: 0,
+                C_np: 30,
+                C_skill: 0,
+                D: 0,
+            },
+            battle2:{
+                A: 50,
+                B: 0,
+                C_np: 0,
+                C_skill: 0,
+                D: 0,
+            },
+            battle3:{
+                A: 50,
+                B: 0,
+                C_np: 0,
+                C_skill: 0,
+                D: 0,
+            },
+        },
+    },
+
 ]
 
-const value = ref(['Sandra Adams'])
+const selectServant = ref(null);
+const selectSupporter = ref(null);
+const props = defineProps({
+    servant: {
+      type: Object,
+      required: false,
+    },
+})
 </script>
 
 <template>
   <VSelect
-    v-model="value"
-    :items="items"
+    v-model="selectServant"
+    :items="props.servant"
     item-title="name"
-    item-value="name"
-    label="Select Item"
+    item-value="skills"
+    label="Select Servant"
     multiple
     clearable
     clear-icon="tabler-x"
@@ -46,10 +84,36 @@ const value = ref(['Sandra Adams'])
       <VChip>
         <VAvatar
           start
-          :image="item.raw.avatar"
+          :image="item.raw.image"
         />
         <span>{{ item.title }}</span>
       </VChip>
     </template>
   </VSelect>
+  {{ selectServant }}
+  <VSelect
+    v-model="selectSupporter"
+    :items="Supporter"
+    item-title="name"
+    item-value="buffs"
+    label="Select Support Model"
+    clearable
+    clear-icon="tabler-x"
+  >
+    <template #selection="{ item }">
+      <VChip>
+        <VAvatar
+          start
+          :image="item.raw.image"
+        />
+        <span>{{ item.title }}</span>
+      </VChip>
+    </template>
+  </VSelect>
+  {{ selectSupporter }}
+  <div v-for="servant in selectServant">
+        <div v-if="servant && selectServant" :key="servant.id">
+            <NpDamageCard v-bind:servant="servant" v-bind:supporter="selectSupporter"/>
+        </div>
+  </div>
 </template>

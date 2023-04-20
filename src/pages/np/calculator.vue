@@ -1,24 +1,16 @@
 <script setup>
 import ServantSelectSelectionSlot from '@/pages/np/ServantSelectSelectionSlot.vue';
-import { useEmailStore } from '@/views/apps/email/useEmailStore';
 import { useServantStore } from '@/views/apps/servant/useServantStore';
 
 const store = useServantStore();
-const Estore = useEmailStore()
+const allServants = ref(null)
 
 // Fetch emails
 const fetchServants = async () => {
-  await store.fetchServants({})
+  await store.fetchServants({q: ''})
+  allServants.value = store.servants
 }
 
-// Fetch emails
-const fetchEmails = async () => {
-  await Estore.fetchEmails({
-  })
-}
-
-
-fetchEmails()
 fetchServants()
 
 </script>
@@ -30,12 +22,10 @@ fetchServants()
       md="12"
     >
       <!-- 👉 Selection slot -->
-    <ServantSelectSelectionSlot/>
+      <ServantSelectSelectionSlot v-bind:servant="allServants" />
     </VCol>
 
     <VCol>
-      <!-- {{ Estore.emails }} -->
-      {{ store.servants }}
     </VCol>
   </VRow>
 </template>

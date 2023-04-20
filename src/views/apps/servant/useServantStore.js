@@ -11,12 +11,6 @@ export const useServantStore = defineStore('servant', {
       const { servants } = response.data
       this.servants = servants
     },
-    async fetchEmails(payload) {
-      const response = await axios.get('/apps/email/emails', { params: payload })
-      const { emails, emailsMeta } = response.data
-
-      this.servants = emails
-    },
     async fetchServant() {
       const response = await axios.get(`/apps/servant/${id}`)
       const { servants } = response.data
